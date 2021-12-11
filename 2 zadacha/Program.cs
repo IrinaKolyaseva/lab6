@@ -10,21 +10,35 @@ namespace _2_zadacha
     {
         static void Main(string[] args)
         {
-            string[] slovo = s.Split(new[] { " " }, StringSplitOptions.None);
-            
-                string[] slovo = s.Split(new[] { " " }, StringSplitOptions.None);
-                string sl = "";
-                int drs = 0;
-                foreach (string ds in slovo)
-                {
-                    if (ds.Length > drs)
-                    {
-                        sl = ds;
-                        drs = ds.Length;
-                    }
-                }
-                Console.WriteLine(sl);
-                Console.ReadKey();
+            Console.WriteLine("Введите предложение");
+            string s = Console.ReadLine();
+
+            if (isPalindrom(s) == true)
+            {
+                Console.WriteLine("Это предложение является полнидромом");
             }
+            else
+            {
+                Console.WriteLine("Это предложение не является полиндромом");
+            }
+            Console.ReadLine();
         }
+        public static bool isPalindrom(string s)
+        {
+
+            bool p = true;
+
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                int m = s.Length - 1 - i;
+
+                if (s[i] != s[m])
+                {
+                    p = false;
+                }
+            }
+            return p;
+        }
+
     }
+}

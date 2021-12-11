@@ -9,37 +9,22 @@ namespace lab6
     internal class Program
     {
         static void Main(string[] args)
-        {
+         {
             Console.WriteLine("Введите предложение");
             string s = Console.ReadLine();
-
-            if (isPalindrom(s)==true)
-            {
-                Console.WriteLine("Это предложение является полнидромом");
-            }
-            else
-            {
-                Console.WriteLine("Это предложение не является полиндромом");
-            }
-          Console.ReadLine();
-        }
-        public static bool isPalindrom(string s)
-        {
-
-            bool p = true;
-
-            for (int i = 0; i < s.Length - 1; i++)
+            string[] slovo = s.Split(new[] {" "}, StringSplitOptions.None);
+            string sl = "";
+            int drs = 0;
+            foreach (string ds in slovo)
             { 
-                int m = s.Length - 1 - i;
-
-                if (s[i] != s[m])
+            if (ds.Length > drs)
                 {
-                    p = false;
+                    sl = ds;
+                    drs=ds.Length; 
                 }
             }
-            return p;
+            Console.WriteLine(sl);   
+            Console.ReadKey();  
         }
-
     }
 }
-            
